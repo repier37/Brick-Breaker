@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : Brick Breaker.cpp
+// Name        : Brick_Breaker.cpp
 // Author      :
 // Version     :
 // Copyright   : Your copyright notice

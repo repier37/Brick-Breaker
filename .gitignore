@@ -1,6 +1,6 @@
 *.[oa]
 .cproject
-.metadata/**.*
+.metadata/
 .project
-.setting/**.*
-.Debug/**.*
+.settings/
+Debug/

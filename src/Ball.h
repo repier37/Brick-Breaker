@@ -2,7 +2,7 @@
  * Ball.h
  *
  *  Created on: 1 août 2017
- *      Author: pierre
+ *      Author: pierre gilles
  */
 
 #ifndef BALL_H_
