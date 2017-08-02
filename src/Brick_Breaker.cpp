@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 		SDL_RenderClear(mainScreen.m_renderer);
 
 		// update ball;
-		ball.update();
+		ball.update(Screen::SCREEN_HEIGHT,Screen::SCREEN_WIDTH);
 		// update screen
 		//mainScreen.update();
 

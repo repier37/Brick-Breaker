@@ -27,7 +27,7 @@ public:
 	Ball(SDL_Renderer* renderer);
 	virtual ~Ball();
 
-	void update();
+	void update(int screenHeight, int screenWidth);
 	void drawBall(SDL_Renderer* renderer);
 };
 
