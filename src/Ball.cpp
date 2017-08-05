@@ -19,8 +19,8 @@ Ball::Ball(SDL_Renderer* renderer) {
 	}
 	m_texture = SDL_CreateTextureFromSurface(renderer, image);
 	SDL_FreeSurface(image);
-	m_speed = 1;
-	m_dir = M_PI / 4.0;
+	m_speed = 5;
+	m_dir = -3.07*M_PI /4;
 	m_x = 950;
 	m_y = 100;
 }
@@ -32,11 +32,15 @@ Ball::~Ball() {
 void Ball::update(int sHeight, int sWidth) {
 	m_x += m_speed * cos(m_dir);
 	m_y += m_speed * sin(m_dir);
-	cout << m_dir << " " << m_x << endl;
+	cout << m_dir << " " << cos(m_dir) << endl;
 
-	if (m_x < 10) {
-		m_dir += M_PI;
-		m_dir = fmod(m_dir, M_PI_2);
+	if (m_x > sWidth || m_x<10){
+		m_dir = M_PI-m_dir;
+	}
+
+	if (m_y>sHeight || m_y < 10){
+		m_dir *= -1.0;
+
 	}
 
 }
