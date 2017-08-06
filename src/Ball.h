@@ -8,13 +8,15 @@
 #ifndef BALL_H_
 #define BALL_H_
 #include <SDL.h>
+#include <SDL_image.h>
+#include <vector>
 
 namespace pierre {
 
 class Ball {
 public:
-	const static int BALL_WIDTH = 20;
-	const static int BALL_HEIGTH = 20;
+	SDL_Rect m_hitBox;
+	const static int BALL_RADIUS=10;
 
 private:
 	SDL_Texture* m_texture;
@@ -28,7 +30,9 @@ public:
 	virtual ~Ball();
 
 	void update(int screenHeight, int screenWidth);
-	void drawBall(SDL_Renderer* renderer);
+	void draw(SDL_Renderer* renderer);
+	bool collision(const SDL_Rect* obst);
+	bool collision(const std::vector<SDL_Rect>);
 };
 
 } /* namespace pierre */

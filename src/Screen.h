@@ -9,6 +9,7 @@
 #define SCREEN_H_
 #include <SDL.h>
 #include <iostream>
+#include <vector>
 
 namespace pierre {
 
@@ -18,8 +19,11 @@ private:
 	SDL_Texture* m_texture;
 
 
+
 public:
 	SDL_Renderer* m_renderer;
+	std::vector<SDL_Rect> gameAreaBound;
+
 
 public:
 	const static int SCREEN_HEIGHT = 768;

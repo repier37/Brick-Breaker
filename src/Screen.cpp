@@ -11,7 +11,7 @@ using namespace std;
 namespace pierre {
 
 Screen::Screen() :
-		m_window(NULL), m_renderer(NULL), m_texture(NULL) {
+		m_window(NULL), m_texture(NULL), m_renderer(NULL) {
 }
 
 Screen::~Screen() {
@@ -62,6 +62,29 @@ bool Screen::init() {
 					close();
 					return false;
 				}
+
+				//gameArea init
+				SDL_Rect bound;
+				bound.h = 5;
+				bound.w = SCREEN_WIDTH;
+				bound.x = 0;
+				bound.y = 0;
+
+				gameAreaBound.push_back(bound);
+
+				bound.y = SCREEN_HEIGHT-bound.h*2;;
+
+				gameAreaBound.push_back(bound);
+
+				bound.y = bound.h;
+				bound.w = bound.h;
+				bound.h = SCREEN_HEIGHT;
+
+				gameAreaBound.push_back(bound);
+
+				bound.x = SCREEN_WIDTH-bound.w;
+
+				gameAreaBound.push_back(bound);
 			}
 
 		}
@@ -78,7 +101,7 @@ void Screen::close() {
 	SDL_DestroyTexture(m_texture);
 	SDL_DestroyRenderer(m_renderer);
 	SDL_DestroyWindow(m_window);
-	cout <<"programm quit"<<endl;
+	cout << "programm quit" << endl;
 	SDL_Quit();
 }
 
