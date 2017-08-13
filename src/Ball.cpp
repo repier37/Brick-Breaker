@@ -21,7 +21,7 @@ Ball::Ball(SDL_Renderer* renderer) {
 	}
 	m_texture = SDL_CreateTextureFromSurface(renderer, image);
 	SDL_FreeSurface(image);
-	m_speed = 5;
+	m_speed = MIN_SPEED;
 	m_dir = -3.07 * M_PI / 4;
 	m_x = 950;
 	m_y = 100;
@@ -38,12 +38,16 @@ Ball::~Ball() {
 }
 
 void Ball::update(int sHeight, int sWidth) {
+	m_speed-=0.01;
+	if (m_speed<MIN_SPEED){
+		m_speed = MIN_SPEED;
+	}
 	m_x += m_speed * cos(m_dir);
 
 	m_y += m_speed * sin(m_dir);
 	/*std::cout << m_dir << " " << cos(m_dir) << std::endl;
 
-	if (m_x > sWidth || m_x < 10) {
+	 if (m_x > sWidth || m_x < 10) {
 	 m_dir = M_PI - m_dir;
 	 }
 
@@ -76,18 +80,16 @@ bool Ball::collision(const SDL_Rect* obst) {
 	SDL_Rect res;
 	SDL_IntersectRect(&m_hitBox, obst, &res);
 
-	std::cout << "collision detected" << std::endl;
+	//std::cout << "collision detected" << std::endl;
 	if (res.w >= res.h) {
-		std::cout << "along y axis" << std::endl;
+		//std::cout << "along y axis" << std::endl;
 		m_dir *= -1.0;
 	} else {
-		std::cout << "along x axis" << std::endl;
+		//std::cout << "along x axis" << std::endl;
 		m_dir = M_PI - m_dir;
 	}
 	return true;
 }
-
-
 
 bool Ball::collision(const std::vector<SDL_Rect> hitBox) {
 	bool result = false;
@@ -96,9 +98,7 @@ bool Ball::collision(const std::vector<SDL_Rect> hitBox) {
 		if (result) {
 			break;
 		}
-
 	}
-
 	return result;
 }
 
@@ -108,4 +108,18 @@ void Ball::draw(SDL_Renderer* renderer) {
 //std::cout << SDL_GetError()<<std::endl;
 }
 
+bool Ball::advancedCollision(int elapsed, const std::vector<SDL_Rect> hitBox) {
+	bool result = false;
+	if (collision(hitBox)) {
+
+		m_speed += 160.0 / elapsed;
+
+		result = true;
+	}
+	if (m_speed > MAX_SPEED) {
+		m_speed = MAX_SPEED;
+	}
+	std::cout << m_speed << std::endl;
+	return result;
+}
 } /* namespace pierre */

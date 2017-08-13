@@ -24,10 +24,14 @@ Bar::Bar(SDL_Renderer* renderer, int posx, int posy) {
 	m_texture = SDL_CreateTextureFromSurface(renderer, image);
 	SDL_FreeSurface(image);
 
-	m_hitbox.x = m_x-m_width/2;
-	m_hitbox.y = m_y+m_height/2;
-	m_hitbox.w = m_width;
-	m_hitbox.h = m_height;
+	SDL_Rect hitBox;
+
+	hitBox.x = m_x-m_width/2;
+	hitBox.y = m_y+m_height/2;
+	hitBox.w = m_width;
+	hitBox.h = m_height;
+
+	m_hitbox.push_back(hitBox);
 }
 
 Bar::~Bar() {
@@ -36,21 +40,21 @@ Bar::~Bar() {
 
 void Bar::update(int x, int screenWidth) {
 
-	if (x+m_hitbox.w/2 > screenWidth){
-		m_x = screenWidth-m_hitbox.w/2;
-	} else if (x - m_hitbox.w/2 < 0){
-		m_x = m_hitbox.w/2;
+	if (x+m_hitbox[0].w/2 > screenWidth){
+		m_x = screenWidth-m_hitbox[0].w/2;
+	} else if (x - m_hitbox[0].w/2 < 0){
+		m_x = m_hitbox[0].w/2;
 	} else {
 		m_x = x;
 	}
 
-	m_hitbox.x = m_x-m_width/2;
-	m_hitbox.y = m_y+m_height/2;
+	m_hitbox[0].x = m_x-m_width/2;
+	m_hitbox[0].y = m_y+m_height/2;
 }
 
 void Bar::draw(SDL_Renderer* renderer) {
 
-	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitbox);
+	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitbox[0]);
 }
 
 } /* namespace pierre */

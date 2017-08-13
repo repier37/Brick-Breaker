@@ -9,12 +9,13 @@
 #define BAR_H_
 #include <SDL.h>
 #include <SDL_image.h>
+#include <vector>
 
 namespace pierre {
 
 class Bar {
 public:
-	SDL_Rect m_hitbox;
+	std::vector<SDL_Rect> m_hitbox;
 
 private:
 	double m_height;

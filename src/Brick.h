@@ -8,12 +8,12 @@
 #ifndef BRICK_H_
 #define BRICK_H_
 #include <SDL.h>
-
+#include <vector>
 namespace pierre {
 
 class Brick {
 public:
-	SDL_Rect m_hitbox;
+	std::vector<SDL_Rect> m_hitbox;
 	SDL_Texture* m_texture;
 
 
@@ -21,7 +21,7 @@ public:
 private:
 	int m_pv;
 	int m_x;
-		int m_y;
+	int m_y;
 
 
 

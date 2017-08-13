@@ -17,6 +17,8 @@ class Ball {
 public:
 	SDL_Rect m_hitBox;
 	const static int BALL_RADIUS=10;
+	const static int MAX_SPEED = 15;
+	const static int MIN_SPEED=5;
 
 private:
 	SDL_Texture* m_texture;
@@ -33,6 +35,7 @@ public:
 	void draw(SDL_Renderer* renderer);
 	bool collision(const SDL_Rect* obst);
 	bool collision(const std::vector<SDL_Rect>);
+	bool advancedCollision(int elapsed, const std::vector<SDL_Rect> hitBox);
 };
 
 } /* namespace pierre */

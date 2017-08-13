@@ -29,11 +29,16 @@ Brick::Brick(int x, int y, SDL_Renderer* renderer) {
 	}
 
 	SDL_FreeSurface(image);
+	SDL_Rect hitbox;
+	hitbox.x = m_x;
+	hitbox.y = m_y;
+	hitbox.w = 50;
+	hitbox.h = 20;
 
-	m_hitbox.x = m_x;
-	m_hitbox.y = m_y;
-	m_hitbox.w = 50;
-	m_hitbox.h = 20;
+	m_hitbox.push_back(hitbox);
+
+	//std::cout<<"Brick created"<<std::endl;
+
 }
 
 Brick::~Brick() {
@@ -42,16 +47,16 @@ Brick::~Brick() {
 }
 
 void Brick::draw(SDL_Renderer* renderer) {
-	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitbox);
+	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitbox[0]);
 }
 
-void Brick::deleteBrick(){
+void Brick::deleteBrick() {
 	SDL_DestroyTexture(m_texture);
 }
 
-int Brick::lostPV(){
+int Brick::lostPV() {
 	m_pv--;
-	if (m_pv<=0){
+	if (m_pv <= 0) {
 		deleteBrick();
 	}
 	return m_pv;

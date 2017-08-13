@@ -19,13 +19,14 @@ Level::Level(SDL_Renderer* renderer) {
 	int xPadding=10;
 	int yPadding=10;
 	int count=0;
+	int yStart=100;
 
 	//Brick brick(0, 0, renderer);
 	//SDL_QueryTexture(brick.m_texture,NULL,NULL,&brickW,&brickH);
 	//std::cout<<brickW<<"  "<<brickH<<std::endl;
 
 
-	for (int y=10; y<rowNumb*(brickH+yPadding); y+= (brickH+yPadding)){
+	for (int y=yStart; y<rowNumb*(brickH+yPadding)+yStart; y+= (brickH+yPadding)){
 		//std::cout<<"y: "<<y<<std::endl;
 		for (int x = 10; x<colNumb*(brickW+xPadding);x+=brickW+xPadding){
 			//std::cout<<x<<"   "<<y<<std::endl;
@@ -52,7 +53,7 @@ void Level::draw(SDL_Renderer* renderer){
 	for (unsigned int i=0; i< brickArr.size();i++){
 		//std::cout<<i<<std::endl;
 		//std::cout<<"Brick to be rendered: "<<brickArr[i].m_x<<"    "<<brickArr[i].m_y<<std::endl;
-		SDL_RenderCopy(renderer, brickArr[i].m_texture, NULL, &(brickArr[i].m_hitbox));
+		SDL_RenderCopy(renderer, brickArr[i].m_texture, NULL, &(brickArr[i].m_hitbox[0]));
 		//std::cout<<SDL_GetError()<<std::endl;
 	}
 

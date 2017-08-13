@@ -27,26 +27,39 @@ int main(int argc, char **argv) {
 	//initialisation of game objects
 
 	Ball ball(mainScreen.m_renderer);
+	//cout<<"ball created"<<endl;
 	Bar bar(mainScreen.m_renderer, Screen::SCREEN_WIDTH/2, Screen::SCREEN_HEIGHT-40);
+	//cout<<"bar created"<<endl;
 	//Brick brickTest(20,20,mainScreen.m_renderer);
 	Level level1 (mainScreen.m_renderer);
+	//cout<<"level created"<<endl;
 
 	int time;
+	int elapsedSinceCollision=0;
 
+	bool gameStart = false;
 	bool quit = 0;
 	// game loop
 	while (!quit) {
 		time = SDL_GetTicks();
+		cout<<time<<endl;
 		SDL_RenderClear(mainScreen.m_renderer);
 
 		// update ball;
 		ball.update(Screen::SCREEN_HEIGHT,Screen::SCREEN_WIDTH);
-		ball.collision(mainScreen.gameAreaBound);
-		ball.collision(&(bar.m_hitbox));
+
+		if(ball.collision(mainScreen.gameAreaBound)){
+			elapsedSinceCollision=time-elapsedSinceCollision;
+		}
+		if(ball.advancedCollision(elapsedSinceCollision,bar.m_hitbox)){
+			elapsedSinceCollision=time-elapsedSinceCollision;
+		}
 
 		for (unsigned int i =0; i<level1.brickArr.size();i++){
-			if(ball.collision(&level1.brickArr[i].m_hitbox)){
+			if(ball.advancedCollision(elapsedSinceCollision, level1.brickArr[i].m_hitbox)){
 				level1.update(i);
+				elapsedSinceCollision=time-elapsedSinceCollision;
+				break;
 			}
 		}
 
