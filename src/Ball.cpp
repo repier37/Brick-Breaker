@@ -8,118 +8,233 @@
 #include "Ball.h"
 #include <iostream>
 #include <math.h>
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 namespace pierre {
 
-Ball::Ball(SDL_Renderer* renderer) {
-	SDL_Surface* image = IMG_Load("data/ball.png");
-	if (image == NULL) {
-		std::cout << "could not load ball image" << std::endl;
-		std::cout << SDL_GetError() << std::endl;
-	}
-	m_texture = SDL_CreateTextureFromSurface(renderer, image);
-	SDL_FreeSurface(image);
-	m_speed = MIN_SPEED;
-	m_dir = -3.07 * M_PI / 4;
-	m_x = 950;
-	m_y = 100;
-
-	m_hitBox.x = m_x - BALL_RADIUS;
-	m_hitBox.y = m_y - BALL_RADIUS;
-	m_hitBox.w = 2 * BALL_RADIUS;
-	m_hitBox.h = 2 * BALL_RADIUS;
+Ball::Ball() {
+	pos= {0,0};
+	texture=NULL;
+	speed = 0;
+	dir.push_back(0);
+	dir.push_back(0);
+	radius = 10;
 
 }
 
 Ball::~Ball() {
-	SDL_DestroyTexture(m_texture);
+	SDL_DestroyTexture(texture);
 }
 
-void Ball::update(int sHeight, int sWidth) {
-	m_speed-=0.01;
-	if (m_speed<MIN_SPEED){
-		m_speed = MIN_SPEED;
+int Ball::init(SDL_Renderer* renderer, SDL_Point startPos) {
+	SDL_Surface* image = IMG_Load("data/ball.png");
+	if (image == NULL) {
+		std::cout << "could not load ball image" << std::endl;
+		std::cout << IMG_GetError() << std::endl;
+		return -1;
 	}
-	m_x += m_speed * cos(m_dir);
+	texture = SDL_CreateTextureFromSurface(renderer, image);
+	if (texture == NULL) {
+		std::cout << "could not load ball image" << std::endl;
+		std::cout << SDL_GetError() << std::endl;
+		return -2;
+	}
+	SDL_FreeSurface(image);
+	pos = startPos;
+	std::cout << "ball init successful" << std::endl;
+	return 0;
+}
 
-	m_y += m_speed * sin(m_dir);
-	/*std::cout << m_dir << " " << cos(m_dir) << std::endl;
+//draw the ball at its current position
+void Ball::draw(SDL_Renderer* renderer) {
+	SDL_Rect dstrect;
+	dstrect.h = radius * 2;
+	dstrect.w = radius * 2;
+	dstrect.x = pos.x - radius;
+	dstrect.y = pos.y - radius;
+	//std::cout<< dstrect.x << " "<< dstrect.y<< " "<<dstrect.w << " "<< dstrect.h<< " "<<std::endl;
+	SDL_RenderCopy(renderer, texture, NULL, &dstrect);
+}
+void Ball::setPos(SDL_Point newPos) {
+	pos = newPos;
+}
 
-	 if (m_x > sWidth || m_x < 10) {
-	 m_dir = M_PI - m_dir;
-	 }
+void Ball::setPos(int val, char axis) {
+	switch (axis) {
+	case 'x': {
+		pos.x = val;
+		break;
+	}
+	case 'y': {
+		pos.y = val;
+		break;
+	}
+	default:
+		break;
+	}
+}
 
-	 if (m_y > sHeight || m_y < 10) {
-	 m_dir *= -1.0;
+int Ball::getRadius() {
+	return radius;
+}
 
-	 }*/
+void Ball::launchBall(SDL_Point mousePos, std::vector<double> dir) {
+	speed = START_SPEED;
+	this->dir = dir;
+}
 
-	m_hitBox.x = m_x - BALL_RADIUS;
-	m_hitBox.y = m_y - BALL_RADIUS;
+SDL_Point Ball::getPos() {
+	return pos;
+}
 
+/* met à jour la position de la balle
+ * retourne 10000 si la balle est sortie du jeu;
+ * retourne l'id de la brique touché si une brique est touché
+ * retourn 0 sinon
+ */
+int Ball::update(Uint32 elapsed, SDL_Rect gameZone, SDL_Rect barreHitbox,
+		std::vector<SDL_Rect> briques) {
+	bool barrCollide = false;
+	// on met à jour la vitesse
+	//speed -= 0.01*elapsed;
+	if (speed < MIN_SPEED) {
+		speed = MIN_SPEED;
+	}
+	// on met à jour les positions
+
+	pos.x += (speed * dir[0]) * elapsed;
+
+	//on test les bords de l'écran en x
+	if (pos.x + radius > gameZone.w) {
+		pos.x = gameZone.w - radius;
+		dir[0] = dir[0] * (-1);
+	} else if (pos.x - radius < 0) {
+		pos.x = radius;
+		dir[0] = dir[0] * (-1);
+	}
+	//on test les bords de la barre en x
+	if (collision(&barreHitbox)) {
+		dir[0] = dir[0] * (-1);
+	}
+	//on test les briques en x;
+
+	pos.y += (speed * dir[1]) * elapsed;
+	// on test en y si on est sorti de l'écran;
+	if (pos.y > gameZone.h) {
+		return 10000;
+	}
+	// puis on test les autres bords de la fenetre en y
+	if (pos.y < radius) {
+		pos.y = radius;
+		dir[1] = -1 * dir[1];
+	}
+	//on test les bords de la barre en y (si on a pas déjà eu une collision
+	if (collision(&barreHitbox)) {
+		dir[1] = dir[1] * (-1);
+	}
+	//on test les briques en y;
+	return 0;
+}
+
+void Ball::reset(SDL_Point startPos) {
+	pos = startPos;
+	dir[0] = 0;
+	dir[1] = 0;
+	speed = 0;
 }
 
 bool Ball::collision(const SDL_Rect* obst) {
-	int leftBall = m_hitBox.x;
-	int topBall = m_hitBox.y;
-	int rightBall = m_hitBox.x + m_hitBox.w;
-	int bottomBall = m_hitBox.y + m_hitBox.h;
 
-	int leftObs = obst->x;
-	int topObs = obst->y;
-	int rightObs = obst->x + obst->w;
-	int bottomObs = obst->y + obst->h;
+	//Closest point on collision box
+	int cX, cY;
 
-	if (leftBall >= rightObs || topBall >= bottomObs || rightBall <= leftObs
-			|| bottomBall <= topObs) {
-		return false;
-	}
-
-	SDL_Rect res;
-	SDL_IntersectRect(&m_hitBox, obst, &res);
-
-	//std::cout << "collision detected" << std::endl;
-	if (res.w >= res.h) {
-		//std::cout << "along y axis" << std::endl;
-		m_dir *= -1.0;
+	//Find closest x offset
+	if (pos.x < obst->x) {
+		cX = obst->x;
+	} else if (pos.x > obst->x + obst->w) {
+		cX = obst->x + obst->w;
 	} else {
-		//std::cout << "along x axis" << std::endl;
-		m_dir = M_PI - m_dir;
+		cX = pos.x;
 	}
-	return true;
-}
 
-bool Ball::collision(const std::vector<SDL_Rect> hitBox) {
-	bool result = false;
-	for (unsigned int i = 0; i < hitBox.size(); i++) {
-		result = collision(&hitBox[i]);
-		if (result) {
-			break;
+	//Find closest y offset
+	if (pos.y < obst->y) {
+		cY = obst->y;
+	} else if (pos.y > obst->y + obst->h) {
+		cY = obst->y + obst->h;
+	} else {
+		cY = pos.y;
+	}
+
+	//If the closest point is inside the circle
+	if (distanceSquared(pos.x, pos.y, cX, cY) < radius * radius) {
+		//This box and the circle have collided
+		if (cX == obst->x) {
+			pos.x = cX - radius;
+		} else if (pos.x == obst->x + obst->w) {
+			pos.x = cX + radius;
 		}
-	}
-	return result;
+		if (cY == obst->y) {
+			pos.y = cY - radius;
+		} else if (pos.y == obst->y + obst->h) {
+			pos.y = cY + radius;
+		}
+		return true;
+	} //If the shapes have not collided
+	return false;
+}/*
+ if (leftBall >= rightObs || topBall >= bottomObs || rightBall <= leftObs
+ || bottomBall <= topObs) {
+ return false;
+ }
+
+ SDL_Rect res;
+ SDL_IntersectRect(&m_hitBox, obst, &res);
+
+ //std::cout << "collision detected" << std::endl;
+ if (res.w >= res.h) {
+ //std::cout << "along y axis" << std::endl;
+ m_dir *= -1.0;
+ } else {
+ //std::cout << "along x axis" << std::endl;
+ m_dir = M_PI - m_dir;
+ }
+ return true;
+ }*/
+/*
+ bool Ball::collision(const std::vector<SDL_Rect> hitBox) {
+ bool result = false;
+ for (unsigned int i = 0; i < hitBox.size(); i++) {
+ result = collision(&hitBox[i]);
+ if (result) {
+ break;
+ }
+ }
+ return result;
+ }
+ */
+/*
+ bool Ball::advancedCollision(int elapsed, const std::vector<SDL_Rect> hitBox) {
+ bool result = false;
+ if (collision(hitBox)) {
+
+ m_speed += 160.0 / elapsed;
+
+ result = true;
+ }
+ if (m_speed > MAX_SPEED) {
+ m_speed = MAX_SPEED;
+ }
+ std::cout << m_speed << std::endl;
+ return result;
+ }
+ */
+
+double Ball::distanceSquared(int x1, int y1, int x2, int y2) {
+	int deltaX = x2 - x1;
+	int deltaY = y2 - y1;
+	return deltaX * deltaX + deltaY * deltaY;
 }
 
-void Ball::draw(SDL_Renderer* renderer) {
-	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitBox);
-
-//std::cout << SDL_GetError()<<std::endl;
-}
-
-bool Ball::advancedCollision(int elapsed, const std::vector<SDL_Rect> hitBox) {
-	bool result = false;
-	if (collision(hitBox)) {
-
-		m_speed += 160.0 / elapsed;
-
-		result = true;
-	}
-	if (m_speed > MAX_SPEED) {
-		m_speed = MAX_SPEED;
-	}
-	std::cout << m_speed << std::endl;
-	return result;
-}
-} /* namespace pierre */
+}/* namespace pierre */

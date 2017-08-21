@@ -7,22 +7,20 @@
 
 #ifndef SCREEN_H_
 #define SCREEN_H_
-#include <SDL.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 #include <vector>
 
 namespace pierre {
 
 class Screen {
+public:
+	SDL_Renderer* m_renderer;
+
 private:
 	SDL_Window* m_window;
 	SDL_Texture* m_texture;
-
-
-
-public:
-	SDL_Renderer* m_renderer;
-	std::vector<SDL_Rect> gameAreaBound;
 
 
 public:
@@ -32,7 +30,7 @@ public:
 public:
 	Screen();
 	bool init();
-	void update();
+	void render(SDL_Texture* texture);
 	void close();
 	virtual ~Screen();
 };

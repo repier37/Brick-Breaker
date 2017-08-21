@@ -7,7 +7,7 @@
 
 #ifndef BRICK_H_
 #define BRICK_H_
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <vector>
 namespace pierre {
 

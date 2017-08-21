@@ -10,51 +10,65 @@
 
 namespace pierre {
 
-Bar::Bar(SDL_Renderer* renderer, int posx, int posy) {
-	m_x = posx;
-	m_y = posy;
-	m_height=20;
-	m_width=200;
+Bar::Bar() {
+	height = 20;
+	width=200;
+	pos.x=0;
+	pos.y=0;
+	texture=NULL;
+}
+
+Bar::~Bar() {
+	SDL_DestroyTexture(texture);
+}
+
+void Bar::init(SDL_Renderer* renderer, SDL_Point startPos) {
+
 
 	SDL_Surface* image = IMG_Load("data/bar.png");
 	if (image == NULL) {
 		std::cout << "could not load bar image" << std::endl;
 		std::cout << SDL_GetError() << std::endl;
 	}
-	m_texture = SDL_CreateTextureFromSurface(renderer, image);
+	texture = SDL_CreateTextureFromSurface(renderer, image);
 	SDL_FreeSurface(image);
+
+	pos = startPos;
 
 	SDL_Rect hitBox;
 
-	hitBox.x = m_x-m_width/2;
-	hitBox.y = m_y+m_height/2;
-	hitBox.w = m_width;
-	hitBox.h = m_height;
+	hitBox.x = pos.x - width / 2;
+	hitBox.y = pos.y - height / 2;
+	hitBox.w = width;
+	hitBox.h = height;
 
 	m_hitbox.push_back(hitBox);
 }
 
-Bar::~Bar() {
-	SDL_DestroyTexture(m_texture);
-}
-
 void Bar::update(int x, int screenWidth) {
 
-	if (x+m_hitbox[0].w/2 > screenWidth){
-		m_x = screenWidth-m_hitbox[0].w/2;
-	} else if (x - m_hitbox[0].w/2 < 0){
-		m_x = m_hitbox[0].w/2;
+	if (x + m_hitbox[0].w / 2 > screenWidth) {
+		pos.x = screenWidth - m_hitbox[0].w / 2;
+	} else if (x - m_hitbox[0].w / 2 < 0) {
+		pos.x = m_hitbox[0].w / 2;
 	} else {
-		m_x = x;
+		pos.x = x;
 	}
 
-	m_hitbox[0].x = m_x-m_width/2;
-	m_hitbox[0].y = m_y+m_height/2;
+	m_hitbox[0].x = pos.x - width / 2;
+}
+
+int Bar::getHeight(){
+	return height;
 }
 
 void Bar::draw(SDL_Renderer* renderer) {
-
-	SDL_RenderCopy(renderer, m_texture, NULL, &m_hitbox[0]);
+	SDL_RenderCopy(renderer, texture, NULL, &m_hitbox[0]);
 }
+
+SDL_Point Bar::getPos(){
+	return pos;
+}
+
 
 } /* namespace pierre */

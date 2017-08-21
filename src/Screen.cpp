@@ -6,12 +6,13 @@
  */
 
 #include "Screen.h"
+
 using namespace std;
 
 namespace pierre {
 
 Screen::Screen() :
-		m_window(NULL), m_texture(NULL), m_renderer(NULL) {
+		m_window(NULL),  m_renderer(NULL), m_texture(NULL) {
 }
 
 Screen::~Screen() {
@@ -27,6 +28,7 @@ bool Screen::init() {
 		return false;
 
 	} else {
+
 		cout << "SDL init ok" << endl;
 
 		string gameName = "Brick Breaker";
@@ -62,39 +64,17 @@ bool Screen::init() {
 					close();
 					return false;
 				}
-
-				//gameArea init
-				SDL_Rect bound;
-				bound.h = 5;
-				bound.w = SCREEN_WIDTH;
-				bound.x = 0;
-				bound.y = 0;
-
-				gameAreaBound.push_back(bound);
-
-				bound.y = SCREEN_HEIGHT-bound.h*2;;
-
-				gameAreaBound.push_back(bound);
-
-				bound.y = bound.h;
-				bound.w = bound.h;
-				bound.h = SCREEN_HEIGHT;
-
-				gameAreaBound.push_back(bound);
-
-				bound.x = SCREEN_WIDTH-bound.w;
-
-				gameAreaBound.push_back(bound);
 			}
 
 		}
 	}
-
+	TTF_Init();
 	return true;
 }
 
-void Screen::update() {
-
+void Screen::render(SDL_Texture* texture) {
+	SDL_RenderCopy(m_renderer, texture,NULL,NULL);
+	SDL_RenderPresent(m_renderer);
 }
 
 void Screen::close() {
@@ -102,6 +82,7 @@ void Screen::close() {
 	SDL_DestroyRenderer(m_renderer);
 	SDL_DestroyWindow(m_window);
 	cout << "programm quit" << endl;
+	TTF_Quit();
 	SDL_Quit();
 }
 

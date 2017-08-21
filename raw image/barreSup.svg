@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="barreSup.svg"
+   inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\barreSup.png"
+   inkscape:export-xdpi="437.70001"
+   inkscape:export-ydpi="437.70001">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3759"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3761" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="-27.743429"
+     inkscape:cy="724.13968"
+     inkscape:document-units="px"
+     inkscape:current-layer="g5325"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2987" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g5279"
+       transform="translate(-32.324881,194.95944)">
+      <g
+         id="g5396"
+         inkscape:export-xdpi="437.70001"
+         inkscape:export-ydpi="437.70001"
+         inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\barreSup.png">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none"
+           id="rect5275"
+           width="1024"
+           height="100"
+           x="46.645611"
+           y="77.45269"
+           ry="14.404679" />
+        <g
+           style="fill:#ffffff;fill-opacity:1"
+           transform="translate(191.31415,-0.26844)"
+           id="g5319">
+          <g
+             style="fill:#ffffff;fill-opacity:1"
+             transform="translate(-12.857143,174.28571)"
+             id="g5334">
+            <g
+               style="fill:#ffffff;fill-opacity:1"
+               id="g5325"
+               transform="translate(4.1104543,1.7469672)">
+              <g
+                 id="g4365"
+                 inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\BarreSup\backU.png"
+                 inkscape:export-xdpi="437.70001"
+                 inkscape:export-ydpi="437.70001">
+                <rect
+                   style="fill:#ffffff;fill-opacity:1;stroke:none"
+                   id="rect5207-5-2-4-5"
+                   width="175"
+                   height="42.098347"
+                   x="170.53915"
+                   y="165.07858"
+                   ry="12.665181" />
+                <g
+                   transform="translate(-487.85714,234.43931)"
+                   id="g3805">
+                  <rect
+                     ry="12.665181"
+                     y="-69.360718"
+                     x="658.3963"
+                     height="42.098347"
+                     width="175"
+                     id="rect5207-5-2-4"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.9973588;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+                  <text
+                     xml:space="preserve"
+                     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+                     x="672.47833"
+                     y="-39.862328"
+                     id="text3801"
+                     sodipodi:linespacing="125%"><tspan
+                       sodipodi:role="line"
+                       id="tspan3803"
+                       x="672.47833"
+                       y="-39.862328"
+                       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial;-inkscape-font-specification:Arial">Back to menu</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g3818"
+                 inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\barreSup.png"
+                 inkscape:export-xdpi="842.67999"
+                 inkscape:export-ydpi="842.67999">
+                <g
+                   id="g5268"
+                   transform="matrix(1,0,0,0.99894383,5.3638497,-111.3214)"
+                   style="fill:#ffffff;fill-opacity:1">
+                  <rect
+                     ry="12.07483"
+                     y="15.457423"
+                     x="-138.79784"
+                     height="95.238098"
+                     width="1019.0243"
+                     id="rect2989"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.86763096;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+                  <g
+                     transform="translate(0,3.6942396)"
+                     id="g5263"
+                     style="fill:#ffffff;fill-opacity:1" />
+                </g>
+                <g
+                   id="g3810">
+                  <rect
+                     ry="12.665181"
+                     y="-69.360718"
+                     x="-81.23999"
+                     height="42.098347"
+                     width="175"
+                     id="rect5207"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.9973588;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+                  <rect
+                     ry="12.665181"
+                     y="-69.360718"
+                     x="165.30545"
+                     height="42.098347"
+                     width="175"
+                     id="rect5207-5"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.9973588;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+                  <rect
+                     ry="12.665181"
+                     y="-69.360718"
+                     x="411.85086"
+                     height="42.098347"
+                     width="175"
+                     id="rect5207-5-2"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.9973588;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+                </g>
+              </g>
+              <g
+                 transform="translate(7.4325421,-73.417829)"
+                 style="fill:#ffffff;fill-opacity:1"
+                 id="g4365-6">
+                <g
+                   id="g4426"
+                   transform="translate(-6.5659915,10.606602)"
+                   inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\BarreSup\backD.png"
+                   inkscape:export-xdpi="437.70001"
+                   inkscape:export-ydpi="437.70001">
+                  <rect
+                     ry="14.139832"
+                     y="162.62776"
+                     x="170.53915"
+                     height="47"
+                     width="175"
+                     id="rect5207-5-2-4-5-0"
+                     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+                  <rect
+                     ry="11.398664"
+                     y="167.18352"
+                     x="179.28915"
+                     height="37.888512"
+                     width="157.5"
+                     id="rect5207-5-2-4-2"
+                     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.49762297;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+                  <text
+                     xml:space="preserve"
+                     style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+                     x="191.96298"
+                     y="193.73206"
+                     id="text3801-4"
+                     sodipodi:linespacing="125%"><tspan
+                       sodipodi:role="line"
+                       id="tspan3803-3"
+                       x="191.96298"
+                       y="193.73206"
+                       style="font-size:21.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial;-inkscape-font-specification:Arial">Back to menu</tspan></text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

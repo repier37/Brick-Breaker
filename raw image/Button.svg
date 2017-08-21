@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Button.svg"
+   inkscape:export-filename="C:\Users\pierre.gilles\Desktop\Button.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="427.08236"
+     inkscape:cy="672.762"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Vide"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ombre"
+     style="display:inline" />
+  <g
+     inkscape:label="Fond"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <g
+       id="g5472"
+       transform="matrix(1.0047508,0,0,0.98779807,0.00518786,1.220663)"
+       inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\menu\startD.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g5456">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:6.12587214;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+           id="rect3755"
+           width="424.16"
+           height="172.73134"
+           x="9.4127293"
+           y="6.2658606" />
+        <rect
+           style="fill:#62d47a;fill-opacity:1;stroke:none"
+           id="rect2985"
+           width="432.85715"
+           height="177.14285"
+           x="-1.2929819"
+           y="-0.15421438" />
+      </g>
+      <text
+         transform="scale(0.94513884,1.0580456)"
+         sodipodi:linespacing="125%"
+         id="text3778"
+         y="131.14847"
+         x="21.518902"
+         style="font-size:136.09999084px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'3ds';-inkscape-font-specification:'3ds'"
+         xml:space="preserve"><tspan
+           style="font-size:136.09999084px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:'3ds';-inkscape-font-specification:'3ds'"
+           y="131.14847"
+           x="21.518902"
+           id="tspan3780"
+           sodipodi:role="line">START</tspan></text>
+    </g>
+    <g
+       id="g5565"
+       inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\menu\startD.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="202.92111"
+         x="-0.6578511"
+         height="179.8821"
+         width="439.88712"
+         id="rect5522"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
+      <rect
+         y="215.4393"
+         x="17.440413"
+         height="165.55785"
+         width="418.76532"
+         id="rect3755-8"
+         style="fill:none;stroke:#000000;stroke-width:5.95906019;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
+      <rect
+         y="209.01274"
+         x="10.816774"
+         height="172.4749"
+         width="425.50168"
+         id="rect2985-9"
+         style="fill:#62d47a;fill-opacity:1;stroke:none;display:inline" />
+      <text
+         transform="scale(0.94967024,1.0529971)"
+         sodipodi:linespacing="125%"
+         id="text3778-8"
+         y="325.89038"
+         x="25.174379"
+         style="font-size:137.04803467px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:'3ds';-inkscape-font-specification:'3ds'"
+         xml:space="preserve"><tspan
+           style="font-size:137.04803467px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:'3ds';-inkscape-font-specification:'3ds'"
+           y="325.89038"
+           x="25.174379"
+           id="tspan3780-2"
+           sodipodi:role="line">START</tspan></text>
+    </g>
+    <g
+       id="g5486"
+       transform="matrix(1.0047299,0,0,0.98784756,-1.0384123,6.0984475)"
+       inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\menu\startD.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g5464">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:6.12587214;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+           id="rect3755-5"
+           width="424.16"
+           height="172.73134"
+           x="11.284573"
+           y="417.14194" />
+        <rect
+           style="fill:#62d47a;fill-opacity:1;stroke:none"
+           id="rect2985-5"
+           width="432.85715"
+           height="177.14285"
+           x="0.57886112"
+           y="410.72186" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3778-1"
+         y="549.70966"
+         x="66.635475"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif;-inkscape-font-specification:sans-serif;"
+         xml:space="preserve"><tspan
+           style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:sans-serif;-inkscape-font-specification:sans-serif;"
+           y="549.70966"
+           x="66.635475"
+           id="tspan3780-7"
+           sodipodi:role="line">EXIT</tspan></text>
+    </g>
+    <g
+       id="g5610"
+       transform="translate(50.507627,-10.101525)"
+       inkscape:export-filename="C:\Users\pierre.gilles\Documents\Perso\Owncloud\Programmation\C++\Jeux\Brick Breaker\data\menu\exitD.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="616.36224"
+         x="0.26969689"
+         height="179.8821"
+         width="439.88712"
+         id="rect5522-6"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
+      <rect
+         y="628.88043"
+         x="18.36796"
+         height="165.55785"
+         width="418.76532"
+         id="rect3755-8-5"
+         style="fill:none;stroke:#000000;stroke-width:5.95906019;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
+      <rect
+         y="622.45386"
+         x="11.744323"
+         height="172.4749"
+         width="425.50168"
+         id="rect2985-9-1"
+         style="fill:#62d47a;fill-opacity:1;stroke:none;display:inline" />
+      <text
+         transform="scale(0.94967024,1.0529971)"
+         sodipodi:linespacing="125%"
+         id="text3778-8-8"
+         y="718.5921"
+         x="90.867043"
+         style="font-size:137.04803467px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:'3ds';-inkscape-font-specification:'3ds'"
+         xml:space="preserve"><tspan
+           style="font-size:137.04803467px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:'3ds';-inkscape-font-specification:'3ds'"
+           y="718.5921"
+           x="90.867043"
+           id="tspan3780-2-2"
+           sodipodi:role="line">EXIT</tspan></text>
+    </g>
+  </g>
+</svg>

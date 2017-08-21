@@ -7,8 +7,8 @@
 
 #ifndef BAR_H_
 #define BAR_H_
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <vector>
 
 namespace pierre {
@@ -18,18 +18,21 @@ public:
 	std::vector<SDL_Rect> m_hitbox;
 
 private:
-	double m_height;
-	double m_width;
-	SDL_Texture* m_texture;
-	double m_x;
-	double m_y;
+	double height;
+	double width;
+	SDL_Texture* texture;
+	SDL_Point pos;
 
 
 public:
-	Bar(SDL_Renderer* renderer, int posx, int posy);
+	Bar();
 	virtual ~Bar();
+
+	void init(SDL_Renderer* renderer, SDL_Point startPos);
 	void update(int x, int screenWidth);
 	void draw(SDL_Renderer* renderer);
+	int getHeight();
+	SDL_Point getPos();
 };
 
 } /* namespace pierre */
